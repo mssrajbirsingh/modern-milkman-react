@@ -27,12 +27,16 @@ class Layout extends React.Component {
          <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
           <div class="container">
             <div class="py-md-5 py-3">
-            <button onClick={(() => {
+            <div class="d-flex justify-content-between mb-4">
+            <button class="theme-btn" onClick={(() => {
                 this.setState({selectedCategories: this.props.getSiteDataObject});
                 })}>Select All</button>
-              <button onClick={(() => {
+              <button  class="theme-btn alter" onClick={(() => {
                 this.setState({selectedCategories: []});
                 })}>Clear</button>
+            </div>
+           
+             
               <div class="row cat-row">
                 {categories}
               </div>

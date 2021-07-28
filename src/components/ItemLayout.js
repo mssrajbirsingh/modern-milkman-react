@@ -3,7 +3,7 @@ import Item from './Item';
 
 class ItemLayout extends React.Component {
     render() {
-      if(this.props.categoryItems != undefined) {
+      if(this.props.categoryItems !== undefined) {
         var items = this.props.categoryItems.map(categoryItem => 
           categoryItem.data.map(item => <Item item={item} />)
         );

@@ -1,5 +1,5 @@
 import React from 'react';
-
+import  img2 from '../images/cat-4.jpg'
 class Category extends React.Component {
     selected = false;
 
@@ -11,12 +11,14 @@ class Category extends React.Component {
   
     render() {
       let title = this.props.categoryItem.title;
-      this.selected = this.props.selected.filter(c => c.title == this.props.categoryItem.title).length > 0 ? true : false;
+      this.selected = this.props.selected.filter(c => c.title === this.props.categoryItem.title).length > 0 ? true : false;
       return (
-      <div className={this.selected?"col-lg-3 col-md-4 col-6 selected":"col-lg-3 col-md-4 col-6"} onClick={() => this.handleCategoryClick(title)}>
-        <div class="cat-card active">
+      <div class="col-lg-3 col-md-4 col-6" onClick={() => this.handleCategoryClick(title)}>
+        <div className={this.selected?"cat-card active":"cat-card"}  >
           <div class="img">
-
+        
+            <img src={img2} alt="Fruits" class="img-fluid"/>    
+        
           </div>
           <div class="theme-head">{title}</div>
         </div>

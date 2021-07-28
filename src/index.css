@@ -11,7 +11,8 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-
+.theme-btn {display: inline-block;border-radius: 3px;border: 1px solid #0c634b;background: #0c634b;padding: 8px 15px;min-width: 130px;color: #fff;}
+.theme-btn.alter {background: #fff;color: #0c634b;border-color: #0c634b;}
 .selected { background-color: #0c634b;}
 
 .head-lg {font-size: 40px;font-weight: bold;position: relative;padding-left: 15px;color: #111;}
