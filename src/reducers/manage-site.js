@@ -13,8 +13,6 @@ const initialState = {
 };
 
 const ManageSite = (state = initialState, { payload, type }) => {
-  debugger;
-
   switch (type) {
     case GET_SITE_DATA_REQUESTED:
       return {

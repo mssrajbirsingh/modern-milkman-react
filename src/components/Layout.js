@@ -10,7 +10,7 @@ class Layout extends React.Component {
 
       
       super(props);
-      this.state = {selectedCategory: null};
+      this.state = {selectedCategories: []};
       this.selectCategory = this.selectCategory.bind(this);
     }
     componentDidMount = () => {
@@ -18,10 +18,7 @@ class Layout extends React.Component {
      console.log(data);
     };
     render() {
-
- 
-
-      var categories = this.props.getSiteDataObject.map(category => <Category categoryItem={category} callback={this.selectCategory} />)
+      var categories = this.props.getSiteDataObject.map(category => <Category categoryItem={category} selected={this.state.selectedCategories} callback={this.selectCategory} />)
       return(
         <div class="main">
           <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
@@ -30,10 +27,16 @@ class Layout extends React.Component {
          <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
           <div class="container">
             <div class="py-md-5 py-3">
+            <button onClick={(() => {
+                this.setState({selectedCategories: this.props.getSiteDataObject});
+                })}>Select All</button>
+              <button onClick={(() => {
+                this.setState({selectedCategories: []});
+                })}>Clear</button>
               <div class="row cat-row">
                 {categories}
               </div>
-              <ItemLayout categoryItem={this.state.selectedCategory} />
+              <ItemLayout categoryItems={this.state.selectedCategories} />
               
             </div>
           </div>
@@ -41,8 +44,24 @@ class Layout extends React.Component {
           )
     }
   
-    selectCategory(category) {
-      this.setState({selectedCategory: category});
+    selectCategory(category, cb) {
+      console.log("clicked", category);
+      let selected = this.state.selectedCategories;
+
+      if(selected.length == 0) {
+        cb(true);
+        selected.push(category);
+      } else {
+        if(selected.filter(c => c.title == category.title).length > 0) {
+          selected.splice(selected.indexOf(category), 1);
+          cb(false);
+        } else {
+          selected.push(category);
+          cb(true);
+        }
+      }
+      console.log("selected", selected);
+      this.setState({selectedCategories: selected});
     }
   }
 

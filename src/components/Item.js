@@ -1,10 +1,6 @@
 import React from 'react';
 
 class Item extends React.Component {
-    constructor(props) {
-      super(props);
-    }
-  
     render() {
       return (
         <div class="col-lg-3 col-md-4 col-sm-6">

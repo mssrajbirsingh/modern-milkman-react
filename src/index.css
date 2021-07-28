@@ -12,6 +12,8 @@ code {
     monospace;
 }
 
+.selected { background-color: #0c634b;}
+
 .head-lg {font-size: 40px;font-weight: bold;position: relative;padding-left: 15px;color: #111;}
       .head-lg:before {content: '';position: absolute;top: 0;left: 0;width: 4px;height: 100%;background: #0c634b;}
       .cat-row {margin-bottom: 30px;}

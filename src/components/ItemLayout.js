@@ -2,13 +2,14 @@ import React from 'react';
 import Item from './Item';
 
 class ItemLayout extends React.Component {
-    constructor(props) {
-      super(props);
-    }
-  
     render() {
-      if(this.props.categoryItem != undefined) {
-        var items = this.props.categoryItem.data.map(item => <Item item={item} />)
+      if(this.props.categoryItems != undefined) {
+        var items = this.props.categoryItems.map(categoryItem => 
+          categoryItem.data.map(item => <Item item={item} />)
+        );
+
+
+        //var items = this.props.categoryItems.data.map(item => <Item item={item} />)
         return (
           <div class="cat-detail">
             <div class="row">
