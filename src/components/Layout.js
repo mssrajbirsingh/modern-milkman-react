@@ -41,7 +41,8 @@ class Layout extends React.Component {
                   <div className={this.state.toggled ? "cat-body" : "cat-body open"}>
                     <div class="d-flex justify-content-between mb-2">
                       <button class="theme-btn w-100" onClick={(() => {
-                        this.setState({ selectedCategories: this.props.getSiteDataObject });
+                        let categories = this.props.getSiteDataObject.map(c => c);
+                        this.setState({ selectedCategories: categories });
                       })}>Select All</button>
                       <button class="theme-btn alter w-100" onClick={(() => {
                         this.setState({ selectedCategories: [] });
