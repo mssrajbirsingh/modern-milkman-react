@@ -29,6 +29,7 @@ Your app is ready to be deployed!
 You may serve it with a static server:
 
   npm install -g serve
+
   npx serve -s build
 
 Find out more about deployment here:
