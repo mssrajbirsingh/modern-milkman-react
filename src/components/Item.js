@@ -3,7 +3,7 @@ import  img2 from '../images/cat-5.jpg'
 class Item extends React.Component {
     render() {
       return (
-        <div class="col-lg-3 col-md-4 col-sm-6">
+        <div class="col-xl-3 col-lg-4 col-sm-6">
           <div class="pd-card">
             <div class="img">
             <img src={img2} alt="Fruits" class="img-fluid"/>    

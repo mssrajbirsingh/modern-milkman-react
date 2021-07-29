@@ -13,16 +13,12 @@ class Category extends React.Component {
       let title = this.props.categoryItem.title;
       this.selected = this.props.selected.filter(c => c.title === this.props.categoryItem.title).length > 0 ? true : false;
       return (
-      <div class="col-lg-3 col-md-4 col-6" onClick={() => this.handleCategoryClick(title)}>
-        <div className={this.selected?"cat-card active":"cat-card"}  >
-          <div class="img">
-        
-            <img src={img2} alt="Fruits" class="img-fluid"/>    
-        
-          </div>
+        <div className={this.selected?"cat-card active":"cat-card"} onClick={() => this.handleCategoryClick(title)} >
+          {/* <div class="img">        
+            <img src={img2} alt="Fruits" class="img-fluid"/>
+          </div> */}
           <div class="theme-head">{title}</div>
         </div>
-      </div>
       )
     }
   

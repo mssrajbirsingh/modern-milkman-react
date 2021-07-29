@@ -5,11 +5,15 @@ import {
   getSiteDataSuccess
 } from "../actions/manage-site-action-type";
 import Utils from "../utils";
+import { config } from 'dotenv';
 const {
   httpHelper: { getRequest },
 } = new Utils().getAll();
 
-let url='https://developertests.z33.web.core.windows.net/ReactTestData.json'
+//let url='https://developertests.z33.web.core.windows.net/ReactTestData.json'
+let url= process.env.REACT_APP_API_URL
+
+console.log(config);
 
 export function* getManageSiteData() {
   const dataparam = {

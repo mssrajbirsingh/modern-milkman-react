@@ -3,16 +3,14 @@ import Item from './Item';
 
 class ItemLayout extends React.Component {
     render() {
-      if(this.props.categoryItems !== undefined) {
+      if(this.props.categoryItems.length > 0) {
         var items = this.props.categoryItems.map(categoryItem => 
           categoryItem.data.map(item => <Item item={item} />)
         );
-
-
         //var items = this.props.categoryItems.data.map(item => <Item item={item} />)
         return (
           <div class="cat-detail">
-            <div class="row">
+            <div class="row pd-card-row">
               {items}
             </div>
           </div>
@@ -20,7 +18,7 @@ class ItemLayout extends React.Component {
         
       }
       return(
-        <div>Please select a category</div>
+        <div class="no-pd-txt"><span>Please select a category</span></div>
       )
     }
   }
