@@ -26,11 +26,15 @@ It correctly bundles React in production mode and optimizes the build for the be
 The build is minified and the filenames include the hashes.\
 Your app is ready to be deployed!
 
-You may serve it with a static server:
+You may serve it with a static server
 
-  npm install -g serve
+### `npm install -g serve`
 
-  npx serve -s build
+Installs a static server globally
+
+### `npx serve -s build`
+  
+Serves the content in build folder
 
 Find out more about deployment here:
 
